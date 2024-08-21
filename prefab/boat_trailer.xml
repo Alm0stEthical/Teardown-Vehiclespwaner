@@ -1,0 +1,28 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/boat_trailer.xml" pos="-9.9 0 110.60001" rot="0 -90 0">
+		<group prop0="texture=1 0.5">
+			<instance pos="0.2 0 -6" file="MOD/prefab/pickup_red.xml"/>
+			<vehicle name="Boat Trailer" tags="nodrive" pos="0 0.3 0">
+				<body dynamic="true">
+					<vox density="2" strength="5" file="MOD/vox/props/boat_trailer.vox" object="body">
+						<wheel name="fr" pos="1.2 0.1 1" travel="-0.2 0.1">
+							<vox pos="0.1 -0.4 0" file="MOD/vox/props/boat_trailer.vox" object="wheel_fr"/>
+						</wheel>
+						<wheel name="br" pos="1.2 0.1 2.1" travel="-0.2 0.1">
+							<vox pos="0.1 -0.4 0" file="MOD/vox/props/boat_trailer.vox" object="wheel_br"/>
+						</wheel>
+						<wheel name="fl" pos="-1 0.1 1" travel="-0.2 0.1">
+							<vox pos="-0.1 -0.4 0" file="MOD/vox/props/boat_trailer.vox" object="wheel_fl"/>
+						</wheel>
+						<wheel name="bl" pos="-1.1 0.1 2.1" travel="-0.2 0.1">
+							<vox pos="-0.1 -0.4 0" file="MOD/vox/props/boat_trailer.vox" object="wheel_bl"/>
+						</wheel>
+						<joint pos="0.05 0.25 -3.3" rot="90 270 0" rotstrength="0.3" rotspring="0"/>
+					</vox>
+				</body>
+			</vehicle>
+			<instance pos="-0.15 1.25 0.75" file="MOD/prefab/woodboat.xml"/>
+		</group>
+	</group>
+</prefab>
+

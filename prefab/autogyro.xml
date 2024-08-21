@@ -1,0 +1,18 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/autogyro.xml" pos="-71.4 5.2 31.00001">
+		<body name="Autogyro" pos="0 0.5 -0.2" dynamic="true">
+			<vox tags="unbreakable" pos="0 -0.5 1.6" density="2" file="MOD/vox/autogyro.vox" object="body"/>
+		</body>
+		<body name="Mainrotor" pos="0.05 3.4 0.05" dynamic="true">
+			<vox tags="unbreakable" pos="-0.05 0 0.05" file="MOD/vox/autogyro.vox" object="mainrotor">
+				<joint tags="rotate" pos="0.05 0 -0.05" rot="90 0 0" type="hinge" rotstrength="0.1" rotspring="0"/>
+			</vox>
+		</body>
+		<body name="Tailrotor" pos="0.05 1.75 1.7" dynamic="true">
+			<vox tags="unbreakable" pos="-0.05 -0.75 0.2" file="MOD/vox/autogyro.vox" object="tailrotor">
+				<joint tags="rotate" pos="0.05 0.75 -0.2" rot="0 180 0" type="hinge" rotstrength="0.1" rotspring="0"/>
+			</vox>
+		</body>
+	</group>
+</prefab>
+

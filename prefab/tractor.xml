@@ -1,0 +1,34 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/tractor.xml" pos="37.3 0 133.70001" rot="0 -180 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Tractor" sound="tractor" spring="2" topspeed="15" strength="7" difflock="1" friction="2">
+				<body pos="-0.05 0.6 -0.25" dynamic="true">
+					<vox pos="-0.05 -0.3 0.45" density="4" strength="5" file="MOD/vox/tractor.vox" object="body">
+						<light pos="-0.3 0.8 -1.5" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" angle="50" penumbra="15" unshadowed="0.2" glare="0.3"/>
+						<light pos="0.4 0.8 -1.5" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="50" angle="50" penumbra="15" unshadowed="0.2" glare="0.3"/>
+						<light pos="0.6 1.05 1.3" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="-0.5 1.05 1.3" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.6 1.25 1" type="area" scale="2" size="0.2 0.1" unshadowed="0.2"/>
+						<light pos="-0.5 1.25 1" type="area" scale="2" size="0.2 0.1" unshadowed="0.2"/>
+						<location tags="exhaust" pos="-0.25 1.9 -1.15" rot="-90 0 0"/>
+						<location tags="vital" pos="0.05 0.7 -0.85"/>
+						<location tags="player" pos="0.05 1.65 0.4"/>
+					</vox>
+					<wheel name="bl" pos="-0.65 0.15 1.1" drive="1" travel="0 0.1">
+						<vox pos="-0.1 -0.75 0.05" file="MOD/vox/tractor.vox" object="wheel_bl"/>
+					</wheel>
+					<wheel name="br" pos="0.65 0.15 1.1" drive="1" travel="0 0.1">
+						<vox pos="0.1 -0.75 0.05" file="MOD/vox/tractor.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="fl" pos="-0.65 -0.15 -1.1" steer="1" travel="0 0.1">
+						<vox pos="-0.2 -0.45 0.05" file="MOD/vox/tractor.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="fr" pos="0.65 -0.15 -1.1" steer="1" travel="0 0.1">
+						<vox pos="0.1 -0.45 0.05" file="MOD/vox/tractor.vox" object="wheel_fr"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

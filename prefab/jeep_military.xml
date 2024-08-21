@@ -1,0 +1,34 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/jeep_military.xml" pos="33.6 0 148.70001">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Jacobi SL (Military)" pos="0 0.3 0" sound="suv4 1.1" spring="1.1" damping="0.9" topspeed="65" acceleration="2" strength="4" antiroll="0.3" difflock="1" steerassist="0.3" friction="1.4">
+				<body dynamic="true">
+					<vox density="2.5" strength="3" file="MOD/vox/jacobi_military.vox" object="body">
+						<location tags="player" pos="-0.3 1.1 0.4"/>
+						<location tags="vital" pos="0.05 0.5 -1"/>
+						<location tags="exhaust" pos="0.4 0.1 1.3"/>
+						<light pos="-0.3 0.6 -1.3" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="25" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="0.4 0.6 -1.3" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="25" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.5 0.55 1.4" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.6 0.55 1.4" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="-0.5 0.45 1.4" type="area" size="0.2 0.1" unshadowed="0.3"/>
+						<light pos="0.6 0.45 1.4" type="area" size="0.2 0.1" unshadowed="0.3"/>
+					</vox>
+					<wheel name="fr" pos="0.6 0.05 -1.05" drive="1" steer="1" travel="-0.1 0.2">
+						<vox pos="0.1 -0.35 0.05" file="MOD/vox/jacobi_military.vox" object="wheel_fr"/>
+					</wheel>
+					<wheel name="fl" pos="-0.5 0.05 -1.05" drive="1" steer="1" travel="-0.1 0.2">
+						<vox pos="-0.1 -0.35 0.05" file="MOD/vox/jacobi_military.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="br" pos="0.6 0.05 0.95" drive="1" travel="-0.1 0.2">
+						<vox pos="0.1 -0.35 0.05" file="MOD/vox/jacobi_military.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="bl" pos="-0.5 0.05 0.95" drive="1" travel="-0.1 0.2">
+						<vox pos="-0.1 -0.35 0.05" file="MOD/vox/jacobi_military.vox" object="wheel_bl"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

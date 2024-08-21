@@ -1,0 +1,133 @@
+#Car
+MOD/prefab/boat_trailer.xml : Car/Pickup w/boat and Trailer
+MOD/prefab/bumpercar_blue.xml : Car/Bumpercar Blue
+MOD/prefab/bumpercar_green.xml : Car/Bumpercar Green
+MOD/prefab/bumpercar_red.xml : Car/Bumpercar Red
+MOD/prefab/bumpercar_yellow.xml : Car/Bumpercar Yellow
+MOD/prefab/castanet_broken.xml : Car/Castanet Broken
+MOD/prefab/castanet_pink.xml : Car/Castanet Pink
+MOD/prefab/castanet_red.xml : Car/Castanet Red
+MOD/prefab/defender_grey.xml : Car/Defender Grey
+MOD/prefab/defender_white.xml : Car/Defender White
+MOD/prefab/golf_cart.xml : Car/Golf Cart
+MOD/prefab/jeep_military.xml : Car/Jeep Military
+MOD/prefab/jeep_red.xml : Car/Jeep Red
+MOD/prefab/jeep_speed.xml : Car/Jeep Speed
+MOD/prefab/microcar.xml : Car/Small Car Blue
+MOD/prefab/monstertruck.xml : Car/Monster Truck
+MOD/prefab/monstertruck2.xml : Car/Monster Truck 2
+MOD/prefab/motorbike.xml : Car/Motorbike
+MOD/prefab/musclecar_green.xml : Car/Muscle Car Green
+MOD/prefab/musclecar_purple.xml : Car/Muscle Car Purple
+MOD/prefab/path_racer.xml : Car/Gordo Pathtracer
+MOD/prefab/pickup_blue.xml : Car/Pickup Blue
+MOD/prefab/pickup_red.xml : Car/Pickup Red
+MOD/prefab/pickup_white.xml : Car/Pickup White
+MOD/prefab/racingcar.xml : Car/Racing Car
+MOD/prefab/rv_trailer.xml : Car/Salooncar w/RV Trailer
+MOD/prefab/salooncar_green.xml : Car/Salooncar Green
+MOD/prefab/salooncar_red.xml : Car/Salonooncar Red
+MOD/prefab/salooncar_taxi.xml : Car/Salooncar Taxi
+MOD/prefab/seidel_blue.xml : Car/Seidel Blue
+MOD/prefab/seidel_green.xml : Car/Seidel Green
+MOD/prefab/seidel_pink.xml : Car/Seidel Pink
+MOD/prefab/smallcar_rv.xml : Car/Salooncar RV
+MOD/prefab/sportcar_green.xml : Car/Sportcar Green
+MOD/prefab/sportcar_pink.xml : Car/Sportcar Pink
+MOD/prefab/station_wagon_blue.xml : Car/Station Wagon Blue
+MOD/prefab/station_wagon_brown.xml : Car/Station Wagon Brown
+MOD/prefab/station_wagon_modern.xml : Car/Station Wagon Modern
+MOD/prefab/station_wagon_police.xml : Car/Station Wagon Police
+MOD/prefab/suv_blue.xml : Car/SUV Blue
+MOD/prefab/suv_yellow.xml : Car/SUV Yellow
+MOD/prefab/van_dealer.xml : Car/Van Dealer
+MOD/prefab/van_fbi.xml : Car/Van FBI
+MOD/prefab/van_flatbed.xml : Car/Van Flatbed
+MOD/prefab/van_lts.xml : Car/Van LTS
+MOD/prefab/van_lts_new.xml : Car/Van LTS New
+MOD/prefab/van_move.xml : Car/Van Move
+MOD/prefab/van_white.xml : Car/Van White
+MOD/prefab/van_yellow.xml : Car/Van Yellow
+MOD/prefab/salooncar_darkgreen.xml : Car/Salooncar Dark Green
+MOD/prefab/pickup_flat.xml : Car/Pickup Flat
+MOD/prefab/pickup_cover.xml : Car/Pickup Cover
+MOD/prefab/tuk_tuk.xml : Car/Ice Cream Tuk-Tuk
+MOD/prefab/van_wolf.xml : Car/Van Wolf
+MOD/prefab/van_storm.xml : Car/Van Storm
+MOD/prefab/van_storm_trailer.xml : Car/Van Storm w/Trailer
+MOD/prefab/van_wood.xml : Car/Van Woodchipper w/Trailer
+
+#Truck
+MOD/prefab/bus.xml : Truck/Bus
+MOD/prefab/eu_semi_white.xml : Truck/EU Truck w/Semitrailer
+MOD/prefab/eu_truck.xml : Truck/EU Truck
+MOD/prefab/hotvan.xml : Truck/Hotdog Truck
+MOD/prefab/icevan2.xml : Truck/Ice Van Interior
+MOD/prefab/mayhem_semi.xml : Truck/Mayhem Semi
+MOD/prefab/mayhem_truck.xml : Truck/Mayhem Truck
+MOD/prefab/propane_semi.xml : Truck/Propane Semi
+MOD/prefab/truck_fish.xml : Truck/Fish Truck
+MOD/prefab/truck_ramp.xml : Truck/Flatbed Truck
+MOD/prefab/truck_white.xml : Truck/White Truck
+MOD/prefab/us_semi_babbage.xml : Truck/US Semi Babbage
+MOD/prefab/us_semi_electrans.xml : Truck/US Semi Electrans
+MOD/prefab/us_semi_flatbed.xml : Truck/US Semi Flatbed
+MOD/prefab/us_semi_safecomp.xml : Truck/US Semi Safecomp
+MOD/prefab/us_semi_white.xml : Truck/US Semi White
+MOD/prefab/us_truck.xml : Truck/US Truck
+MOD/prefab/bamvan.xml : Truck/BAM Truck
+MOD/prefab/pizzavan.xml : Truck/Pizza Truck
+MOD/prefab/tacovan.xml : Truck/Taco Truck
+
+#Heavy machinery
+MOD/prefab/basketlift.xml : Heavy machinery/Basketlift
+MOD/prefab/big_excavator.xml : Heavy machinery/Big Excavator
+MOD/prefab/big_forklift.xml : Heavy machinery/Big Forklift
+MOD/prefab/cement_truck.xml : Heavy machinery/Cement Truck
+MOD/prefab/crane_truck.xml : Heavy machinery/Crane Truck
+MOD/prefab/dump_truck.xml : Heavy machinery/Dump Truck
+MOD/prefab/dumptruck_old.xml : Heavy machinery/Dump Truck Old
+MOD/prefab/dumptruck_new.xml : Heavy machinery/Dump Truck New
+MOD/prefab/forklift.xml : Heavy machinery/Electric Forklift
+MOD/prefab/forklift2.xml : Heavy machinery/Small Forklift
+MOD/prefab/frontloader.xml : Heavy machinery/Frontloader
+MOD/prefab/mobile_crane.xml : Heavy machinery/Mobile Crane
+MOD/prefab/plow_truck.xml : Heavy machinery/Plow Truck
+MOD/prefab/small_excavator.xml : Heavy machinery/Small Excavator
+MOD/prefab/telehandler.xml : Heavy machinery/Telehandler
+MOD/prefab/tractor.xml : Heavy machinery/Tractor
+MOD/prefab/woodchipper.xml : Heavy machinery/Woodchipper
+
+#Military
+MOD/prefab/armored_van.xml : Military/Armored Van RL
+MOD/prefab/armored_van2.xml : Military/Armored Van
+MOD/prefab/autogyro.xml : Military/Autogyro
+MOD/prefab/chopper.xml : Military/Helicopter
+MOD/prefab/heavy_duty_truck.xml : Military/Heavy Duty Truck
+MOD/prefab/mg_trailer.xml : Military/Jeep w/MG Trailer
+MOD/prefab/military_truck.xml : Military/Military Truck
+MOD/prefab/tank.xml : Military/Tank
+MOD/prefab/tank_atv.xml : Military/ATV Tank x2
+MOD/prefab/tank_atv_long.xml : Military/ATV Tank x3
+MOD/prefab/truxterminator.xml : Military/Truxterminator
+
+#Boat
+MOD/prefab/patrolboat.xml : Boat/Patrol Boat
+MOD/prefab/fishing_boat.xml : Boat/Fishing Boat
+MOD/prefab/mediumboat.xml : Boat/Medium Boat
+MOD/prefab/mediumboat_cg.xml : Boat/Medium Boat CG
+MOD/prefab/mediumboat_lts.xml : Boat/Medium Boat LTS
+MOD/prefab/mediumboat_lts_new.xml : Boat/Medium Boat LTS New
+MOD/prefab/smallboat.xml : Boat/Small Boat
+MOD/prefab/smallboat_blue.xml : Boat/Small Boat Blue
+MOD/prefab/smallboat_green.xml : Boat/Small Boat Green
+MOD/prefab/smallboat_red.xml : Boat/Small Boat Red
+MOD/prefab/smallboat_wood.xml : Boat/Small Boat Wood
+MOD/prefab/speedboat.xml : Boat/Speed Boat
+MOD/prefab/swan_boat.xml : Boat/Swan Boat
+MOD/prefab/transport_boat.xml : Boat/Transport Boat
+MOD/prefab/tugboat.xml : Boat/Tugboat
+MOD/prefab/woodboat.xml : Boat/Wood Boat
+MOD/prefab/yatch.xml : Boat/Yatch (Marina)
+MOD/prefab/yatch_red.xml : Boat/Yatch (Red)
+MOD/prefab/party_boat.xml : Boat/Party Boat

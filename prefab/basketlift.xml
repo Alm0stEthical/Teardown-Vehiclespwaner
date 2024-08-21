@@ -1,0 +1,39 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/basketlift.xml" pos="33.89999 0 55.99999" rot="0 -180 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Basket Lift" tags="reversebeep skylift" sound="forklift 1.4" spring="2" topspeed="10" acceleration="0.2" strength="2" antispin="1" antiroll="0.1" difflock="1">
+				<body pos="0 0.2 0" dynamic="true">
+					<vox density="5" strength="5" file="MOD/vox/basket_lift.vox" object="body">
+						<wheel name="fr" pos="0.6 0.15 -0.6" steer="1" travel="0 0.1">
+							<vox pos="0 -0.35 0.05" file="MOD/vox/basket_lift.vox" object="wheel_fr"/>
+						</wheel>
+						<wheel name="fl" pos="-0.5 0.15 -0.6" steer="1" travel="0 0.1">
+							<vox pos="-0.1 -0.35 0.05" file="MOD/vox/basket_lift.vox" object="wheel_fl"/>
+						</wheel>
+						<wheel name="br" pos="0.6 0.15 1.2" drive="1" travel="0 0.1">
+							<vox pos="0 -0.35 0.05" file="MOD/vox/basket_lift.vox" object="wheel_br"/>
+						</wheel>
+						<wheel name="bl" pos="-0.5 0.15 1.2" drive="1" travel="0 0.1">
+							<vox pos="-0.1 -0.35 0.05" file="MOD/vox/basket_lift.vox" object="wheel_bl"/>
+						</wheel>
+						<location tags="player" pos="0 1.6 0"/>
+						<location tags="vital" pos="0 0.7 0.7"/>
+						<vox pos="0 0.15 0.45" density="10" file="MOD/vox/basket_lift.vox" object="chassis"/>
+					</vox>
+					<body pos="0.3 2.4 -0.75" rot="40 0 0" dynamic="true">
+						<vox density="3" strength="8" file="MOD/vox/basket_lift.vox" object="arm">
+							<joint pos="0.2 0.1 2" rot="0 90 0" type="hinge" rotspring="0" limits="-40 30" sound="true"/>
+							<joint pos="-0.1 0.1 2" rot="0 90 0" type="hinge" rotspring="0" limits="-40 30" sound="true"/>
+						</vox>
+					</body>
+					<body pos="0 0 -2.75" dynamic="true">
+						<vox pos="0.3 3.7 -0.1" strength="3" file="MOD/vox/basket_lift.vox" object="bucket">
+							<joint tags="level" pos="0.1 0.05 0.55" rot="0 -90 0" type="hinge" rotspring="0" limits="-40 30" sound="true"/>
+						</vox>
+					</body>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

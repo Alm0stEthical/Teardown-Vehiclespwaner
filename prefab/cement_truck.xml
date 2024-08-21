@@ -1,0 +1,43 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/cement_truck.xml" pos="40.75 0 59.1">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Cement Truck" tags="dumptruck" pos="-0.05 0 0" sound="dumptruck" spring="1.2" damping="0.8" topspeed="25" strength="3" antiroll="0.4" difflock="1">
+				<body pos="0.15 0.5 0.95" dynamic="true">
+					<vox pos="-0.15 -0.1 -1.15" density="5" strength="3" file="MOD/vox/cement_truck.vox" object="body">
+						<light pos="-0.6 0.9 -3.3" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" angle="120" penumbra="40" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.7 0.9 -3.3" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" angle="120" penumbra="15" unshadowed="0.2" glare="0.2"/>
+						<location tags="exhaust" pos="-0.3 0.2 -1.4" rot="0 -50 0"/>
+						<location tags="vital" pos="0.05 0.7 -3"/>
+						<location tags="camera" pos="0.2 1.8 0.6"/>
+						<location tags="player" pos="-0.45 1.7 -2.1"/>
+						<vox pos="0.2 0.1 3.8" file="MOD/vox/cement_truck.vox" object="rear"/>
+					</vox>
+					<wheel name="bl1" pos="-0.65 0.05 0.2" drive="1" travel="-0.2 0.1">
+						<vox pos="-0.4 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_bl1"/>
+					</wheel>
+					<wheel name="bl2" pos="-0.65 0.05 1.5" drive="1" travel="-0.2 0.1">
+						<vox pos="-0.4 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_bl2"/>
+					</wheel>
+					<wheel name="br1" pos="0.45 0.05 0.2" drive="1" travel="-0.2 0.1">
+						<vox pos="0.3 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_br1"/>
+					</wheel>
+					<wheel name="br2" pos="0.45 0.05 1.5" drive="1" travel="-0.2 0.1">
+						<vox pos="0.3 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_br2"/>
+					</wheel>
+					<wheel name="fl" pos="-0.95 0.05 -3.4" steer="1" travel="-0.2 0.1">
+						<vox pos="-0.2 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="fr" pos="0.75 0.05 -3.4" steer="1" travel="-0.2 0.1">
+						<vox pos="0.1 -0.55 0.05" file="MOD/vox/cement_truck.vox" object="wheel_fr"/>
+					</wheel>
+				</body>
+				<body pos="0 1.8 1.75" rot="-20 0 0" dynamic="true">
+					<vox pos="0 0 -0.2" strength="3" file="MOD/vox/cement_truck.vox" object="bed">
+						<joint pos="0.05 1.2 -2.35" type="hinge" size="0.3" sound="true"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

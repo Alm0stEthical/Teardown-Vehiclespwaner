@@ -1,0 +1,34 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/salooncar_red.xml" pos="16.19999 0 107.99999" rot="0 180 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Drab 75 (Red)" sound="small1 0.8" damping="1.5" topspeed="90" acceleration="6" strength="4" antiroll="0.2" difflock="0.2" steerassist="0.4" friction="1.8">
+				<body pos="0 0.4 -0.15" dynamic="true">
+					<vox pos="-0.05 -0.3 0.15" density="1.2" strength="2" file="MOD/vox/salooncar.vox" object="body">
+						<light pos="-0.5 0.65 2.1" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="-0.65 0.65 2.1" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<light pos="0.75 0.65 2.1" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<light pos="0.6 0.65 2.1" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="0.6 0.55 -2.1" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.5 0.55 -2.1" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<location tags="exhaust" pos="-0.35 0.2 2.05"/>
+						<location tags="vital" pos="0.05 0.55 -1.35"/>
+						<location tags="player" pos="-0.25 1.15 -0.1"/>
+					</vox>
+					<wheel name="fr" pos="0.65 -0.1 -1.15" steer="1">
+						<vox pos="0.1 -0.3 0" file="MOD/vox/salooncar.vox" object="wheel_fr"/>
+					</wheel>
+					<wheel name="fl" pos="-0.65 -0.1 -1.15" steer="1">
+						<vox pos="-0.1 -0.3 0" file="MOD/vox/salooncar.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="br" pos="0.65 -0.1 1.45" drive="1">
+						<vox pos="0.1 -0.3 0" file="MOD/vox/salooncar.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="bl" pos="-0.65 -0.1 1.45" drive="1">
+						<vox pos="-0.1 -0.3 0" file="MOD/vox/salooncar.vox" object="wheel_bl"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

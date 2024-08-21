@@ -1,0 +1,38 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/forklift.xml" pos="30.4 0 -17">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Electric Forklift" tags="forklift" pos="0 0.1 0" sound="electric1" spring="2" topspeed="15" strength="2" difflock="0.5" friction="1.5">
+				<body dynamic="true">
+					<vox density="3" strength="5" file="MOD/vox/forklift.vox" object="body">
+						<wheel name="fr" pos="0.4 0.15 -0.95" drive="1">
+							<vox pos="0.1 -0.25 0.05" file="MOD/vox/forklift.vox" object="wheel_fr"/>
+						</wheel>
+						<wheel name="fl" pos="-0.4 0.15 -0.95" drive="1">
+							<vox pos="-0.1 -0.25 0.05" file="MOD/vox/forklift.vox" object="wheel_fl"/>
+						</wheel>
+						<wheel name="br" pos="0.3 0.15 0.85" steer="-1">
+							<vox pos="0.1 -0.25 0.05" file="MOD/vox/forklift.vox" object="wheel_br"/>
+						</wheel>
+						<wheel name="bl" pos="-0.3 0.15 0.85" steer="-1">
+							<vox pos="-0.1 -0.25 0.05" file="MOD/vox/forklift.vox" object="wheel_bl"/>
+						</wheel>
+						<location tags="player" pos="0 1.6 0"/>
+						<location tags="vital" pos="0 0.6 0.7"/>
+						<light pos="-0.55 1.45 -0.8" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" penumbra="30" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.55 1.45 -0.8" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" penumbra="30" unshadowed="0.2" glare="0.2"/>
+						<light pos="0 0.65 1.1" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.2" glare="0.5"/>
+					</vox>
+					<body pos="0 0 -1.2" dynamic="true">
+						<vox density="4" strength="10" file="MOD/vox/forklift.vox" object="arm"/>
+						<body pos="0 0.4 -0.7" dynamic="true">
+							<vox density="4" strength="10" file="MOD/vox/forklift.vox" object="fork"/>
+							<joint pos="-0.4 0.2 0.6" rot="-90 0 0" type="prismatic" rotspring="0" limits="-0.5 1.5" sound="true"/>
+						</body>
+						<joint pos="-0.5 1 0" rot="-90 0 0" type="prismatic" rotspring="0" limits="0 1.4" sound="true"/>
+					</body>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

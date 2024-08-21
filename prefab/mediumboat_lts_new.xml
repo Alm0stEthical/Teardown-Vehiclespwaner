@@ -1,0 +1,16 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/mediumboat_lts_new.xml" pos="-43.39999 0 93.40001" rot="0 -180 0">
+		<group prop0="texture=2 0.5">
+			<vehicle name="Medium Boat LTS New" tags="boat" sound="mediumboat" spring="1.4" topspeed="50" steerassist="0.1">
+				<body tags="boat" pos="0.75 0.15 -0.1" dynamic="true">
+					<vox pos="-0.75 -1 -0.3" file="MOD/vox/mediumboat_lts_new.vox">
+						<location tags="player" pos="0.75 3 -0.6"/>
+						<location tags="exit" pos="0.75 2.95 2.05"/>
+						<location tags="propeller" pos="0.85 0.25 4.3"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

@@ -1,0 +1,34 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/microcar.xml" pos="16.09999 0 149.89996">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Microcar" pos="0 0.2 0" sound="small1 1.2" damping="2" topspeed="80" acceleration="3" strength="3" antispin="0.5" antiroll="0.2" steerassist="0.5" friction="1.6">
+				<body dynamic="true">
+					<vox density="1.5" strength="2" file="MOD/vox/microcar.vox" object="body">
+						<location tags="player" pos="-0.2 1 0.3"/>
+						<location tags="vital" pos="0 0.6 -1.1"/>
+						<light pos="-0.5 0.55 -1.4" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="0.6 0.55 -1.4" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.4 0.65 1.5" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="0.5 0.65 1.5" type="area" color="1 0.1 0.1" size="0.2 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="-0.45 0.75 1.5" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<light pos="0.55 0.75 1.5" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<location tags="exhaust" pos="0.4 0 1.6"/>
+					</vox>
+					<wheel name="fr" pos="0.65 0.05 -1.05" drive="1" steer="1">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/microcar.vox" object="wheel_fr"/>
+					</wheel>
+					<wheel name="fl" pos="-0.55 0.05 -1.05" drive="1" steer="1">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/microcar.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="br" pos="0.65 0.05 1.35">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/microcar.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="bl" pos="-0.55 0.05 1.35">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/microcar.vox" object="wheel_bl"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

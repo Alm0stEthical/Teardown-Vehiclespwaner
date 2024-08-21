@@ -1,0 +1,221 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/tank_atv_long.xml" pos="12 0 53.5" rot="0 -90 0">
+		<group prop0="texture=8 0.5">
+			<vehicle name="Trailer" tags="nodrive" pos="0 0.4 8" sound="excavator 1.5" spring="0.7" damping="0.8" topspeed="60" acceleration="0.4" strength="2" antispin="0.7" antiroll="1.5" difflock="1" steerassist="0.3">
+				<body dynamic="true">
+					<vox file="MOD/vox/tank2.vox" object="trailer"/>
+					<vox pos="0 0 1.7" file="MOD/vox/tank2.vox" object="hinch1"/>
+					<vox pos="0 0.1 -1.8" file="MOD/vox/tank2.vox" object="hinch2">
+						<joint pos="0.05 0.1 -0.25" rot="90 0 0" rotspring="0"/>
+					</vox>
+					<vox pos="0.7 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackr"/>
+					<vox pos="-0.6 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackl"/>
+					<wheel name="fr" pos="0.7 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fr" pos="0.4 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.6 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.3 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="br" pos="0.7 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="br" pos="0.4 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.6 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.3 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<group name="Mudguards">
+						<body pos="0.6 0 1.5" dynamic="true">
+							<vox pos="0.1 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_r">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 0 1.5" dynamic="true">
+							<vox pos="0 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_l">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0.1 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+					</group>
+				</body>
+			</vehicle>
+			<vehicle name="Tank ATV" pos="0 0.4 0" sound="tank1 1.5" spring="0.7" damping="0.8" topspeed="40" acceleration="0.4" strength="8" antispin="1" antiroll="1.5" difflock="1" steerassist="0.3">
+				<body name="Tank" dynamic="true">
+					<vox file="MOD/vox/tank2.vox" object="body">
+						<light pos="0.8 0.7 -1.6" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.7 0.7 -1.6" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="0.85 1.85 1.2" type="area" color="1 0.1 0.1" size="0.1 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="-0.75 1.85 1.2" type="area" color="1 0.1 0.1" size="0.1 0.1" unshadowed="0.3" glare="0.2"/>
+						<light pos="0.75 1.85 1.2" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<light pos="-0.65 1.85 1.2" type="area" size="0.1 0.1" unshadowed="0.3"/>
+						<location tags="exhaust" pos="-0.5 1.8 1.2"/>
+						<location tags="exhaust" pos="0.6 1.8 1.2"/>
+						<location tags="vital" pos="0.05 0.8 -1.4"/>
+						<location tags="player" pos="-0.35 1.5 -0.4"/>
+					</vox>
+					<vox pos="0 0 1.8" file="MOD/vox/tank2.vox" object="hinch1"/>
+					<vox pos="0.7 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="trackr"/>
+					<vox pos="-0.6 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="trackl"/>
+					<wheel name="fr" pos="0.7 -0.05 -0.85" drive="1" steer="1">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fr" pos="0.4 -0.05 -0.85" drive="1" steer="1">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.6 -0.05 -0.85" drive="1" steer="1">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.3 -0.05 -0.85" drive="1" steer="1">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="br" pos="0.7 -0.05 0.55" drive="1">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="br" pos="0.4 -0.05 0.55" drive="1">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="bl" pos="-0.6 -0.05 0.55" drive="1">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="bl" pos="-0.3 -0.05 0.55" drive="1">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+				</body>
+			</vehicle>
+			<vehicle name="Trailer" tags="nodrive" pos="0 0.4 4" sound="excavator 1.5" spring="0.7" damping="0.8" topspeed="60" acceleration="0.4" strength="2" antispin="0.7" antiroll="1.5" difflock="1" steerassist="0.3">
+				<body dynamic="true">
+					<vox file="MOD/vox/tank2.vox" object="trailer"/>
+					<vox pos="0 0 1.7" file="MOD/vox/tank2.vox" object="hinch1"/>
+					<vox pos="0 0.1 -1.8" file="MOD/vox/tank2.vox" object="hinch2">
+						<joint pos="0.05 0.1 -0.25" rot="90 0 0" rotspring="0"/>
+					</vox>
+					<vox pos="0.7 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackr"/>
+					<vox pos="-0.6 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackl"/>
+					<wheel name="fr" pos="0.7 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fr" pos="0.4 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.6 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.3 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="br" pos="0.7 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="br" pos="0.4 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.6 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.3 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<group name="Mudguards">
+						<body pos="0.6 0 1.5" dynamic="true">
+							<vox pos="0.1 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_r">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 0 1.5" dynamic="true">
+							<vox pos="0 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_l">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0.1 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+					</group>
+				</body>
+			</vehicle>
+			<vehicle name="Trailer" tags="nodrive" pos="0 0.4 11.9" sound="excavator 1.5" spring="0.7" damping="0.8" topspeed="60" acceleration="0.4" strength="2" antispin="0.7" antiroll="1.5" difflock="1" steerassist="0.3">
+				<body dynamic="true">
+					<vox file="MOD/vox/tank2.vox" object="trailer"/>
+					<vox pos="0 0 1.7" file="MOD/vox/tank2.vox" object="hinch1"/>
+					<vox pos="0 0.1 -1.8" file="MOD/vox/tank2.vox" object="hinch2">
+						<joint pos="0.05 0.1 -0.25" rot="90 0 0" rotspring="0"/>
+					</vox>
+					<vox pos="0.7 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackr"/>
+					<vox pos="-0.6 -0.4 -0.1" collide="false" file="MOD/vox/tank2.vox" object="Ttrackl"/>
+					<wheel name="fr" pos="0.7 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fr" pos="0.4 -0.15 -0.75">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.6 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="fl" pos="-0.3 -0.15 -0.75">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel1"/>
+					</wheel>
+					<wheel name="br" pos="0.7 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="br" pos="0.4 -0.15 0.95">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.6 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<wheel name="bl" pos="-0.3 -0.15 1.05">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/tank2.vox" object="wheel2"/>
+					</wheel>
+					<group name="Mudguards">
+						<body pos="0.6 0 1.5" dynamic="true">
+							<vox pos="0.1 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_r">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 0 1.5" dynamic="true">
+							<vox pos="0 0.1 0" strength="10" file="MOD/vox/tank2.vox" object="mudguard_l">
+								<joint pos="0 0.3 0" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="-0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+						<body pos="0.6 -0.2 1.4" dynamic="true">
+							<vox pos="0.1 0 0.1" strength="10" file="MOD/vox/tank2.vox" object="mudguard2">
+								<joint pos="0 0.3 -0.05" rot="0 -90 0" type="hinge" limits="0 45"/>
+							</vox>
+						</body>
+					</group>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

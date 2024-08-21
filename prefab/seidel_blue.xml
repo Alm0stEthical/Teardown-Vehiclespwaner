@@ -1,0 +1,40 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/seidel_blue.xml" pos="23.3 0 82.6" rot="0 180 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Gauss-Seidel B50" pos="0 0.1 0" sound="classic2" spring="0.5" damping="0.7" topspeed="80" acceleration="4" strength="4" steerassist="0.1">
+				<body pos="0.05 0 0" dynamic="true">
+					<vox pos="-0.05 0 0" density="1.5" strength="3" file="MOD/vox/seidel.vox" object="body">
+						<light pos="0.9 0.5 -2.7" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.8 0.5 -2.7" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.2" glare="0.3"/>
+						<light pos="-0.65 0.55 2.6" type="area" color="1 0.1 0.1" size="0.1 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.75 0.55 2.6" type="area" color="1 0.1 0.1" size="0.1 0.1" unshadowed="0.2" glare="0.2"/>
+						<light pos="-0.55 0.55 2.6" type="area" color="0.9 0.85 0.75" size="0.1 0.1" unshadowed="0.2"/>
+						<light pos="0.65 0.55 2.6" type="area" color="0.9 0.85 0.75" size="0.1 0.1" unshadowed="0.2"/>
+						<location tags="vital" pos="0.05 0.6 -1.9"/>
+						<location tags="player" pos="-0.25 1 0"/>
+						<location tags="exhaust" pos="-0.4 0.3 2.5"/>
+						<location tags="exhaust" pos="0.5 0.3 2.5"/>
+					</vox>
+					<wheel name="bl" pos="-0.55 0.25 1.15" drive="1" travel="-0.2 0.1">
+						<vox pos="-0.2 -0.35 0.05" file="MOD/vox/seidel.vox" object="wheel_bl"/>
+					</wheel>
+					<wheel name="br" pos="0.55 0.25 1.15" drive="1" travel="-0.2 0.1">
+						<vox pos="0.1 -0.35 0.05" file="MOD/vox/seidel.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="fl" pos="-0.55 0.25 -1.95" steer="1" travel="-0.2 0.1">
+						<vox pos="-0.2 -0.35 0.05" file="MOD/vox/seidel.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="fr" pos="0.55 0.25 -1.95" steer="1" travel="-0.2 0.1">
+						<vox pos="0.1 -0.35 0.05" file="MOD/vox/seidel.vox" object="wheel_fr"/>
+					</wheel>
+				</body>
+				<body pos="0 0.6 2.1" dynamic="true">
+					<vox file="MOD/vox/seidel.vox" object="trunk">
+						<joint pos="0.05 0.2 -0.7" rot="0 90 0" type="hinge" rotstrength="0.2" rotspring="0" collide="true"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

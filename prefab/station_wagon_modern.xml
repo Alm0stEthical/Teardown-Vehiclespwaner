@@ -1,0 +1,34 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/station_wagon_modern.xml" pos="26.8 0 97.49999">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Modern Station Wagon" pos="0 0.1 0" sound="stationwagon1 0.9" spring="0.9" topspeed="80" acceleration="3" strength="4" antispin="1" antiroll="0.1" steerassist="0.3">
+				<body dynamic="true">
+					<vox density="1.5" strength="2" file="MOD/vox/modern_station_wagon.vox" object="body">
+						<light pos="0.75 0.6 -2" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.3" glare="0.3"/>
+						<light pos="-0.75 0.6 -2" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="20" penumbra="30" unshadowed="0.3" glare="0.3"/>
+						<light pos="-0.75 0.7 2" type="area" color="1 0.1 0.1" size="0.1 0.2" unshadowed="0.3" glare="0.2"/>
+						<light pos="0.75 0.7 2" type="area" color="1 0.1 0.1" size="0.1 0.2" unshadowed="0.3" glare="0.2"/>
+						<light pos="-0.65 0.7 2" type="area" size="0.1 0.2" unshadowed="0.3"/>
+						<light pos="0.65 0.7 2" type="area" size="0.1 0.2" unshadowed="0.3"/>
+						<location tags="vital" pos="0 0.6 -1.6"/>
+						<location tags="player" pos="-0.35 1.1 -0.1"/>
+						<location tags="exhaust" pos="0.5 0.1 1.9"/>
+					</vox>
+					<wheel name="bl" pos="-0.7 0.15 1.25" travel="-0.1 0.2">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/modern_station_wagon.vox" object="wheel_bl"/>
+					</wheel>
+					<wheel name="br" pos="0.7 0.15 1.25" travel="-0.1 0.2">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/modern_station_wagon.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="fl" pos="-0.7 0.15 -1.45" drive="1" steer="1" travel="-0.1 0.2">
+						<vox pos="-0.1 -0.25 0.05" file="MOD/vox/modern_station_wagon.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="fr" pos="0.7 0.15 -1.45" drive="1" steer="1" travel="-0.1 0.2">
+						<vox pos="0.1 -0.25 0.05" file="MOD/vox/modern_station_wagon.vox" object="wheel_fr"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

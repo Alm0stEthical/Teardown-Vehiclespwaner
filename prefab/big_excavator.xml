@@ -1,0 +1,68 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/big_excavator.xml" pos="-11.00001 0 115.7" rot="0 -90 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Excavator" tags="frontloader reversebeep" sound="excavator" spring="2" damping="2" topspeed="10" acceleration="0.2" strength="10" antiroll="0.5" difflock="1">
+				<body pos="0 0.8 0.5" dynamic="true">
+					<vox pos="0 -0.6 -0.6" density="4" file="MOD/vox/excavator_big.vox" object="body_lower">
+						<wheel pos="-1.4 0.35 2.35" drive="1" steer="-1">
+							<vox pos="-0.3 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_l1"/>
+						</wheel>
+						<wheel pos="-1.4 0.35 1.15" drive="1" steer="-0.5">
+							<vox pos="-0.3 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_l1"/>
+						</wheel>
+						<wheel pos="-1.4 0.35 -0.05" drive="1">
+							<vox pos="-0.3 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_l1"/>
+						</wheel>
+						<wheel pos="-1.4 0.35 -1.25" drive="1" steer="0.5">
+							<vox pos="-0.3 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_l1"/>
+						</wheel>
+						<wheel pos="-1.4 0.35 -2.45" drive="1" steer="1">
+							<vox pos="-0.3 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_l1"/>
+						</wheel>
+						<wheel pos="1.4 0.35 2.35" drive="1" steer="-1">
+							<vox pos="0.2 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_r1"/>
+						</wheel>
+						<wheel pos="1.4 0.35 1.15" drive="1" steer="-0.5">
+							<vox pos="0.2 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_r1"/>
+						</wheel>
+						<wheel pos="1.4 0.35 -0.05" drive="1">
+							<vox pos="0.2 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_r1"/>
+						</wheel>
+						<wheel pos="1.4 0.35 -1.25" drive="1" steer="0.5">
+							<vox pos="0.2 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_r1"/>
+						</wheel>
+						<wheel pos="1.4 0.35 -2.45" drive="1" steer="1">
+							<vox pos="0.2 -0.55 0.05" file="MOD/vox/excavator_big.vox" object="wheel_r1"/>
+						</wheel>
+					</vox>
+					<vox pos="0 0.6 -0.5" density="4" strength="4" file="MOD/vox/excavator_big.vox" object="body_upper">
+						<location tags="exhaust" pos="0.8 2.4 2.1" rot="-20 0 0"/>
+						<location tags="player" pos="-1.2 1.4 -1.8"/>
+						<light pos="-1.2 2.25 -2.7" rot="0 180 0" type="area" color="1 0.8 0.6" scale="20" size="0.2 0.1" glare="0.4"/>
+					</vox>
+				</body>
+				<body pos="0 5.8 -6" rot="40 0 0" dynamic="true">
+					<vox pos="0 0 2.7" density="3" strength="8" file="MOD/vox/excavator_big.vox" object="arm_1">
+						<joint pos="0.3 0.05 2.65" rot="0 90 0" type="hinge" rotspring="0" limits="-50 30"/>
+						<joint pos="-0.3 0.05 2.65" rot="0 90 0" type="hinge" rotspring="0" limits="-50 30"/>
+						<light pos="-0.5 0.75 1.05" rot="20 180 0" type="cone" color="1 0.8 0.6" scale="10" angle="120" penumbra="30" size="0.2 0.1" glare="0.3"/>
+						<light pos="0.5 0.75 1.05" rot="20 180 0" type="cone" color="1 0.8 0.6" scale="10" angle="120" penumbra="30" size="0.2 0.1" glare="0.3"/>
+					</vox>
+				</body>
+				<body pos="0 4 -8.9" rot="-40 0 0" dynamic="true">
+					<vox pos="0 -0.2 2.2" density="2" strength="8" file="MOD/vox/excavator_big.vox" object="arm_2">
+						<joint pos="0.2 0.25 2.05" rot="0 90 0" type="hinge" rotspring="0" limits="-50 40"/>
+						<joint pos="-0.2 0.25 2.05" rot="0 90 0" type="hinge" rotspring="0" limits="-50 40"/>
+					</vox>
+				</body>
+				<body pos="0 3.7 -9.7" rot="-30 0 0" dynamic="true">
+					<vox pos="0 -1.7 0.35" density="2" strength="16" file="MOD/vox/excavator_big.vox" object="shovel">
+						<joint pos="0.2 1.7 0.4" rot="0 90 0" type="hinge" rotspring="0" limits="-20 70"/>
+						<joint pos="-0.2 1.7 0.4" rot="0 90 0" type="hinge" rotspring="0" limits="-20 70"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

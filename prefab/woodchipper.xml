@@ -1,0 +1,45 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/woodchipper.xml" pos="-0.10001 0.55 5.3">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Woodchipper" tags="dumptruck" pos="0 1.35 0" sound="excavator 1.4" damping="2" topspeed="3" acceleration="0.5" strength="5" difflock="1" steerassist="1">
+				<body pos="0 -0.45 0.25" dynamic="true">
+					<vox pos="0.05 -0.75 0" texture="2 0.5" density="2" strength="4" file="MOD/vox/woodchipper.vox" object="body">
+						<location tags="exhaust" pos="0.5 1.85 0.05" rot="0 90 0"/>
+						<location tags="vital" pos="-0.05 0.8 0.4"/>
+						<location tags="player" pos="-0.05 1.6 -0.6"/>
+					</vox>
+					<wheel name="fr1" pos="0.4 -0.7 -0.85" drive="1" steer="0.3">
+						<vox pos="0.1 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_r"/>
+					</wheel>
+					<wheel name="fl1" pos="-0.4 -0.7 -0.85" drive="1" steer="0.3">
+						<vox pos="-0.2 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_l"/>
+					</wheel>
+					<wheel name="fr2" pos="0.4 -0.7 -0.45" drive="1" steer="0.2">
+						<vox pos="0.1 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_r"/>
+					</wheel>
+					<wheel name="fl2" pos="-0.4 -0.7 -0.45" drive="1" steer="0.2">
+						<vox pos="-0.2 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_l"/>
+					</wheel>
+					<wheel name="br1" pos="0.4 -0.7 -0.05" drive="1" steer="-0.2">
+						<vox pos="0.1 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_r"/>
+					</wheel>
+					<wheel name="bl1" pos="-0.4 -0.7 -0.05" drive="1" steer="-0.2">
+						<vox pos="-0.2 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_l"/>
+					</wheel>
+					<wheel name="br2" pos="0.4 -0.7 0.35" drive="1" steer="-0.3">
+						<vox pos="0.1 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_r"/>
+					</wheel>
+					<wheel name="bl2" pos="-0.4 -0.7 0.35" drive="1" steer="-0.3">
+						<vox pos="-0.2 -0.2 0" file="MOD/vox/woodchipper.vox" object="wheel_l"/>
+					</wheel>
+				</body>
+				<body pos="-0.050001502 -0.6000004 -0.800001" dynamic="true">
+					<vox pos="0.05 0.095 -0.474" density="0.6" strength="2" file="MOD/vox/woodchipper.vox" object="shovel">
+						<joint pos="0 0 0.45" rot="0 90 0" type="hinge" rotspring="0" limits="-20 15"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

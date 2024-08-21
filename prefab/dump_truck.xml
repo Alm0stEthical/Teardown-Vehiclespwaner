@@ -1,0 +1,44 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/dump_truck.xml" pos="44.3 0 71.3">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Dump Truck" tags="dumptruck" sound="dumptruck" spring="1.2" damping="0.8" topspeed="25" strength="3" antiroll="0.4" difflock="1">
+				<body pos="-0.05 0.5 0.15" dynamic="true">
+					<vox pos="-0.05 -0.1 -0.05" density="5" strength="3" file="MOD/vox/dumptruck.vox" object="body">
+						<light pos="-0.6 0.9 -2.9" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" angle="120" penumbra="40" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.7 0.9 -2.9" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="10" angle="120" penumbra="15" unshadowed="0.2" glare="0.2"/>
+						<light pos="0.05 0.55 2.9" type="area" color="1 0.1 0.1" size="0.3 0.1" unshadowed="0.3" glare="0.2"/>
+						<location tags="exhaust" pos="-0.4 0.2 -1" rot="0 -50 0"/>
+						<location tags="vital" pos="0.1 0.7 -2.4"/>
+						<location tags="camera" pos="0.1 1.8 -0.4"/>
+						<location tags="player" pos="-0.45 1.7 -1.9"/>
+					</vox>
+					<wheel name="bl" pos="-0.55 0.05 0.9" drive="1" travel="-0.2 0.1">
+						<vox pos="-0.4 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_bl1"/>
+					</wheel>
+					<wheel name="bl" pos="-0.55 0.05 2.2" drive="1" travel="-0.2 0.1">
+						<vox pos="-0.4 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_bl2"/>
+					</wheel>
+					<wheel name="br" pos="0.55 0.05 0.9" drive="1" travel="-0.2 0.1">
+						<vox pos="0.3 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_br1"/>
+					</wheel>
+					<wheel name="br" pos="0.55 0.05 2.2" drive="1" travel="-0.2 0.1">
+						<vox pos="0.3 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_br2"/>
+					</wheel>
+					<wheel name="fl" pos="-0.85 0.05 -1.9" steer="1" travel="-0.2 0.1">
+						<vox pos="-0.2 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="fr" pos="0.85 0.05 -1.9" steer="1" travel="-0.2 0.1">
+						<vox pos="0.1 -0.55 0.05" file="MOD/vox/dumptruck.vox" object="wheel_fr"/>
+					</wheel>
+				</body>
+				<body pos="-0.2 1.1 0.6" dynamic="true">
+					<vox pos="0.1 0.1 0.1" density="2" strength="3" file="MOD/vox/dumptruck.vox" object="bed">
+						<joint pos="0.7 0 2.3" rot="0 90 0" type="hinge" limits="0 70"/>
+						<joint pos="-0.6 0 2.3" rot="0 90 0" type="hinge" limits="0 70"/>
+					</vox>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

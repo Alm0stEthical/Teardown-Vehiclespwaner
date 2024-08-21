@@ -1,0 +1,31 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/motorbike.xml" pos="26.59999 0 149.05003">
+		<group prop0="texture=1 0.5">
+			<script pos="0 0.3 0" file="MOD/scripts/bike.lua">
+				<vehicle name="Motorbike" tags="bike" antiroll="5">
+					<body dynamic="true">
+						<vox density="2" file="MOD/vox/motorbike.vox" object="body">
+							<wheel pos="0 0.05 0.65" drive="1">
+								<vox pos="0 -0.35 0.05" file="MOD/vox/motorbike.vox" object="wheel"/>
+							</wheel>
+							<light pos="0.05 0.45 0.8" type="area" color="1 0.1 0.1" scale="2" size="0.1 0.1" unshadowed="0.2" glare="0.2"/>
+							<location tags="exhaust" pos="0.15 0.05 0.8"/>
+							<location tags="vital" pos="0 0.3 -0.4"/>
+							<location tags="player" pos="0 1.15 0.05"/>
+							<joint tags="bike" pos="0.05 0.7 -0.85" rot="90 90 0" type="hinge" limits="-10 10"/>
+						</vox>
+					</body>
+					<body pos="0 0 -1.1" dynamic="true">
+						<vox density="3" file="MOD/vox/motorbike.vox" object="front">
+							<wheel pos="0 0.05 -0.35">
+								<vox pos="0 -0.35 0.05" file="MOD/vox/motorbike.vox" object="wheel"/>
+							</wheel>
+							<light pos="0.05 0.85 -0.1" rot="0 180 0" type="cone" color="1 0.9 0.8" scale="5" penumbra="30" unshadowed="0.4" glare="0.3"/>
+						</vox>
+					</body>
+				</vehicle>
+			</script>
+		</group>
+	</group>
+</prefab>
+

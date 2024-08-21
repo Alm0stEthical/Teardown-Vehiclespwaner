@@ -1,0 +1,39 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/telehandler.xml" pos="37.19998 0 55.99999" rot="0 -180 0">
+		<group prop0="texture=1 0.5">
+			<vehicle name="Telehandler" tags="skylift reversebeep" pos="0 0.3 0" sound="forklift 1.3" topspeed="30" acceleration="0.5" strength="2" antispin="1" antiroll="0.1" difflock="1">
+				<body dynamic="true">
+					<vox density="5" strength="2" file="MOD/vox/small_forklift_blue.vox" object="body">
+						<location tags="player" pos="-0.55 1.15 0.2"/>
+						<location tags="vital" pos="-0.05 0.45 -1.15"/>
+					</vox>
+					<body pos="0 0 -0.4" dynamic="true">
+						<vox density="2" strength="8" file="MOD/vox/small_forklift_blue.vox" object="arm_1">
+							<joint pos="0.2 0.95 1.65" rot="0 90 0" type="hinge" limits="0 50" sound="true"/>
+							<joint pos="-0.2 0.95 1.65" rot="0 90 0" type="hinge" limits="0 50" sound="true"/>
+						</vox>
+					</body>
+					<body pos="0 -0.1 -2.9" dynamic="true">
+						<vox tags="unbreakable" density="2" file="MOD/vox/small_forklift_blue.vox" object="arm_2">
+							<joint tags="level" pos="0.2 0.4 1" rot="0 -90 0" type="hinge" limits="0 50" sound="true"/>
+							<joint tags="level" pos="-0.2 0.4 1" rot="0 -90 0" type="hinge" limits="0 50" sound="true"/>
+						</vox>
+					</body>
+					<wheel name="fr" pos="0.6 0.1 -1.4" drive="1" steer="1">
+						<vox pos="0.1 -0.4 0" file="MOD/vox/small_forklift_blue.vox" object="wheel_fr"/>
+					</wheel>
+					<wheel name="fl" pos="-0.7 0.1 -1.4" drive="1" steer="1">
+						<vox pos="-0.1 -0.4 0" file="MOD/vox/small_forklift_blue.vox" object="wheel_fl"/>
+					</wheel>
+					<wheel name="br" pos="0.6 0.1 0.9" drive="1">
+						<vox pos="0.1 -0.4 0" file="MOD/vox/small_forklift_blue.vox" object="wheel_br"/>
+					</wheel>
+					<wheel name="bl" pos="-0.7 0.1 0.9" drive="1">
+						<vox pos="-0.1 -0.4 0" file="MOD/vox/small_forklift_blue.vox" object="wheel_bl"/>
+					</wheel>
+				</body>
+			</vehicle>
+		</group>
+	</group>
+</prefab>
+

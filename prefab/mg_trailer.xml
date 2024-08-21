@@ -1,0 +1,38 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/mg_trailer.xml">
+		<body name="MG Trailer" pos="0 0.2 0" dynamic="true">
+			<vox strength="2" file="MOD/vox/props/generator_trailer.vox" object="body">
+				<joint pos="0.05 0.3 -1.85" size="0.2"/>
+			</vox>
+			<vox pos="0 0.2 0.25" file="MOD/vox/gun_trailer.vox" object="base"/>
+			<body pos="-0.9 -0.2 0.3" dynamic="true">
+				<vox file="MOD/vox/props/generator_trailer.vox" object="wheel_l">
+					<joint pos="0.1 0.25 -0.05" rot="0 90 0" type="hinge" rotspring="0"/>
+				</vox>
+			</body>
+			<script pos="-0.1 0.7 0.3" file="MOD/scripts/turret.lua" param0="gun=true" param1="ammo=75">
+				<body tags="arm" dynamic="true">
+					<vox pos="0.1 0.1 0.85" strength="10" file="MOD/vox/gun_trailer.vox" object="cannon">
+						<joint tags="armmotor" pos="0.3 0.65 -0.65" rot="0 90 0" type="hinge" limits="-10 20"/>
+						<location tags="exhaust" pos="0.05 0.75 -0.6" rot="-90 0 0"/>
+						<location tags="direction" pos="0.05 0.75 2.5"/>
+						<location tags="muzzle" pos="0.05 0.75 1.9"/>
+						<location tags="camera" pos="0.05 1.15 -1.6" rot="0 180 0"/>
+					</vox>
+				</body>
+				<body tags="cab" dynamic="true">
+					<vox pos="0.1 -0.3 0.25" strength="10" file="MOD/vox/gun_trailer.vox" object="body">
+						<joint tags="cabmotor" pos="0.05 0 -0.25" rot="-90 0 0" type="hinge" size="0.15" rotstrength="0.3"/>
+					</vox>
+				</body>
+			</script>
+			<body pos="1 -0.2 0.3" dynamic="true">
+				<vox file="MOD/vox/props/generator_trailer.vox" object="wheel_r">
+					<joint pos="-0.1 0.25 -0.05" rot="0 -90 0" type="hinge" rotspring="0"/>
+				</vox>
+			</body>
+		</body>
+		<instance pos="-0.05 0 -3.4" file="MOD/prefab/jeep_military.xml"/>
+	</group>
+</prefab>
+

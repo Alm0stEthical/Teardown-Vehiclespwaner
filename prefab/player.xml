@@ -1,0 +1,61 @@
+<prefab version="0.9.6">
+	<group name="instance=MOD/prefab/player.xml" pos="37.5 -0.1 16.3">
+		<script pos="0 0.1 0.2" file="robot.lua" param0="type=nooutline investigate">
+			<group pos="0 0.7 0" prop0="texture=12 0.5">
+				<body tags="body" pos="0.1 0.5 0.1" dynamic="true">
+					<vox tags="unbreakable" pos="0 0.4 0" rot="0 180 0" texture="12" density="40" file="MOD/vox/Player.vox" object="body"/>
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="40" file="MOD/vox/Player.vox" object="ASS"/>
+				</body>
+				<body tags="head" pos="0.1 1.6 0" dynamic="true">
+					<joint tags="head" pos="-0.05 0 0.05" rot="-90 90 0" type="hinge" rotspring="0" limits="-45 45"/>
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="0.25" file="MOD/vox/Player.vox" object="head">
+						<light tags="eye" pos="-0.05 0.45 0.2" scale="0"/>
+					</vox>
+				</body>
+				<body pos="-0.4 0.9 0.1" dynamic="true">
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="0.1" file="MOD/vox/Player.vox" object="l_arm_upper">
+						<joint pos="-0.1 0.6 0" rot="0 -90 -90" type="hinge" rotstrength="1" rotspring="0" limits="0 60"/>
+					</vox>
+				</body>
+				<body pos="-0.4 0.8 -0.3" dynamic="true">
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="0.1" file="MOD/vox/Player.vox" object="l_arm_lower">
+						<joint pos="0 0.2 -0.4" rot="-180 -90 0" type="hinge" rotstrength="1" rotspring="0" limits="0 90"/>
+					</vox>
+				</body>
+				<body pos="0.5 0.9 0.1" dynamic="true">
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="0.1" file="MOD/vox/Player.vox" object="l_arm_upper">
+						<joint pos="0.1 0.6 0" rot="0 -90 -90" type="hinge" rotstrength="1" rotspring="0" limits="-10 60"/>
+					</vox>
+				</body>
+				<body tags="aim" pos="0.5 0.8 -0.3" dynamic="true">
+					<vox tags="unbreakable" rot="0 180 0" texture="12" density="0.1" file="MOD/vox/Player.vox" object="r_arm_lower">
+						<vox tags="unbreakable" pos="0.05 1 0.2" rot="-180 0 0" file="MOD/vox/Player.vox" object="hummer_head"/>
+						<vox tags="unbreakable" pos="0 0.8 0.2" rot="-180 0 0" file="MOD/vox/Player.vox" object="hammer_handle"/>
+						<joint pos="0 0.2 -0.4" rot="-180 -90 0" type="hinge" rotstrength="10" rotspring="0" limits="0 90"/>
+					</vox>
+				</body>
+				<body tags="leg" pos="0.4 0.3 0.2" dynamic="true">
+					<vox tags="unbreakable" rot="90 180 0" texture="12" density="0.25" file="MOD/vox/Player.vox" object="r_leg_upper">
+						<joint pos="0 0.1 -0.3" rot="0 -90 0" type="hinge" rotspring="0" limits="-10 60"/>
+					</vox>
+				</body>
+				<body tags="foot" pos="0.4 -0.7 -0.1" dynamic="true">
+					<vox tags="unbreakable" rot="0 180 0" texture="12" file="MOD/vox/Player.vox" object="r_leg_lower">
+						<joint pos="0 0.8 -0.2" rot="0 270 -90" type="hinge" rotspring="0" limits="0 -30"/>
+					</vox>
+				</body>
+				<body tags="leg" pos="-0.3 0.3 0.2" dynamic="true">
+					<vox tags="unbreakable" rot="90 -180 0" texture="12" density="0.25" file="MOD/vox/Player.vox" object="r_leg_upper">
+						<joint pos="-0.1 0.1 -0.3" rot="0 -90 0" type="hinge" rotspring="0" limits="-10 60"/>
+					</vox>
+				</body>
+				<body tags="foot" pos="-0.3 -0.7 -0.1" dynamic="true">
+					<vox tags="unbreakable" pos="0 0.4 0.3" rot="90 -180 0" texture="12" file="MOD/vox/Player.vox" object="l_leg_lower">
+						<joint pos="0 0.1 -0.4" rot="0 -90 0" type="hinge" rotspring="0" limits="0 -30"/>
+					</vox>
+				</body>
+			</group>
+		</script>
+	</group>
+</prefab>
+

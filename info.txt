@@ -1,0 +1,23 @@
+en_name = Car Spawner
+ru_name = Спавнер Машин
+de_name = Fahrzeug-Spawner
+es_name = Generador de Coches
+it_name = Generatore di Auto
+fr_name = Générateur de Véhicules
+jp_name = 車スポナー
+pl_name = Spawner Pojazdów
+sc_name = 车辆生成器
+
+author = David Tanasescu
+
+en_description = A tool for spawning cars in the game world.
+ru_description = Инструмент для спавна машин в игровом мире.
+de_description = Ein Werkzeug zum Spawnen von Fahrzeugen in der Spielwelt.
+es_description = Una herramienta para generar coches en el mundo del juego.
+it_description = Uno strumento per generare auto nel mondo di gioco.
+fr_description = Un outil pour générer des véhicules dans le monde du jeu.
+jp_description = ゲーム内のワールドに車を生成するツールです。
+pl_description = Narzędzie do pojawiania się pojazdów w świecie gry.
+sc_description = 用于在游戏世界中生成车辆的工具。
+
+tags = Tool
