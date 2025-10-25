@@ -1,6 +1,8 @@
-KEYS_AMOUNT = 1
-DEFAULT_MENU_KEY = "X"
+-- Configuration constants
+local KEYS_AMOUNT = 1
+local DEFAULT_MENU_KEY = "X"
 
+-- Initialize options menu state
 function init()
 	if GetString("savegame.mod.hotkey") == "" then
 		SetString("savegame.mod.hotkey", DEFAULT_MENU_KEY)
@@ -12,6 +14,10 @@ function init()
 	end
 end
 
+-- Draw a hotkey editor UI element
+-- @param name: Display name for the hotkey
+-- @param entry: Save game entry key
+-- @param index: Index in the await_input array
 function EditHotkey(name, entry, index)
 	UiPush()
 	UiText(name)
@@ -33,6 +39,9 @@ function EditHotkey(name, entry, index)
 	UiTranslate(0, 75)
 end
 
+-- Draw a toggle option UI element
+-- @param name: Display name for the option
+-- @param entry: Save game entry key
 function ToggleOption(name, entry)
 	UiPush()
 	UiText(name)
@@ -53,6 +62,7 @@ function ToggleOption(name, entry)
 	UiTranslate(0, 75)
 end
 
+-- Draw the options menu UI
 function draw()
 	UiTranslate(UiCenter(), 250)
 	UiAlign("center middle")

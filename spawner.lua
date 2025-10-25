@@ -7,7 +7,7 @@ spawnPlacement = false
 spawnEntities = nil
 spawnOffset = nil
 spawnRadius = 0
-spawnDist = 3.0
+spawnDist = SPAWN_INITIAL_DISTANCE
 spawnRot = 0
 spawnPreviousTool = ""
 spawnFile = ""
@@ -35,15 +35,22 @@ gSetShortcut = false
 gHoverType = ""
 gHoverId = ""
 
-function trim(s)
-    local n = string.find(s, "%S")
-    return n and string.match(s, ".*%S", n) or ""
-end
-
+-- Global vehicle registry
 Vehicles = {}
 
-DEFAULT_MENU_KEY = "X"
+-- Constants
+local DEFAULT_MENU_KEY = "X"
+local MIN_SPAWN_DISTANCE = 2
+local MAX_SPAWN_DISTANCE_OFFSET = 8
+local SPAWN_INITIAL_DISTANCE = 3.0
+local SPAWN_CAMERA_OFFSET = -7
+local SCROLL_SMOOTHING_FACTOR = 0.8
+local PLACEMENT_LERP_FACTOR = 0.25
+local ROTATION_SENSITIVITY = 50
+local CAR_OVERFLOW_THRESHOLD = 20
 
+-- Initialize the vehicle spawner system
+-- Loads all available vehicles from mods and builds the spawn list
 function spawner_init()
     SetInt("savegame.mod.tuxedium", GetInt("savegame.mod.tuxedium") + 1)
 
@@ -60,36 +67,38 @@ function spawner_init()
         if HasKey("mods.available." .. mod) then
             local ids = ListKeys("spawn." .. mod)
             for j = 1, #ids do
-                local tmp = "spawn." .. mod .. "." .. ids[j]
-                local n = GetString(tmp)
-                local p = GetString(tmp .. ".path")
-                local t = "Other"
-                local s = string.find(n, "/", 1, true)
-                if s and s > 1 then
-                    t = string.sub(n, 1, s - 1)
-                    n = string.sub(n, s + 1, string.len(n))
+                local spawnKey = "spawn." .. mod .. "." .. ids[j]
+                local itemName = GetString(spawnKey)
+                local itemPath = GetString(spawnKey .. ".path")
+                local itemType = "Other"
+                local separatorPos = string.find(itemName, "/", 1, true)
+                if separatorPos and separatorPos > 1 then
+                    itemType = string.sub(itemName, 1, separatorPos - 1)
+                    itemName = string.sub(itemName, separatorPos + 1, string.len(itemName))
                 end
-                if n == "" then
-                    n = "Unnamed"
+                if itemName == "" then
+                    itemName = "Unnamed"
                 end
-                t = trim(t)
-                local found = false
+                itemType = trim(itemType)
+                -- Normalize type casing
+                local typeFound = false
                 for k = 1, #types do
-                    if string.lower(types[k]) == string.lower(t) then
-                        t = types[k]
-                        found = true
+                    if string.lower(types[k]) == string.lower(itemType) then
+                        itemType = types[k]
+                        typeFound = true
                         break
                     end
                 end
-                if not found then
-                    types[#types + 1] = t
+                if not typeFound then
+                    types[#types + 1] = itemType
                 end
 
-                local item = {}
-                item.name = n
-                item.type = t
-                item.path = p
-                item.mod = mod
+                local item = {
+                    name = itemName,
+                    type = itemType,
+                    path = itemPath,
+                    mod = mod
+                }
                 gSpawnList[#gSpawnList + 1] = item
             end
         else
@@ -99,8 +108,10 @@ function spawner_init()
 end
 
 
+-- Check if a mod source is enabled for spawning
+-- @param mod: The mod identifier to check
+-- @return: true if the mod is enabled, false otherwise
 function isSourceValid(mod)
-    -- Allow any mod source regardless of its origin
     return not GetBool("savegame.spawn.disabled." .. mod)
 end
 
@@ -109,37 +120,41 @@ function isTypeValid(type)
     return true
 end
 
+-- Check if a name matches the current filter text
+-- @param name: The name to check against the filter
+-- @return: true if matches or no filter is set, false otherwise
 function matchName(name)
     if gFilterText == "" then
         return true
-    else
-        return string.find(string.lower(name), string.lower(gFilterText))
     end
+    return string.find(string.lower(name), string.lower(gFilterText)) ~= nil
 end
 
+-- Refresh the UI lists (sources, types, items) based on current filters
+-- Uses hash maps for O(n) performance instead of nested loops
 function refresh()
-    -- Sources
+    -- Sources - use hash map for O(1) lookup instead of O(n)
     gSources = {}
+    local sourceMap = {}  -- mod -> index mapping for faster lookup
+    
     for i = 1, #gSpawnList do
-        local index = 0
         local mod = gSpawnList[i].mod
-        for j = 1, #gSources do
-            if gSources[j].mod == mod then
-                index = j
-                break
-            end
-        end
-        if index == 0 then
-            local source = {}
-            source.name = GetString("mods.available." .. mod .. ".listname")
-            source.mod = mod
-            source.category = "" -- Removed category assignment based on source
-            source.enabled = not GetBool("savegame.spawn.disabled." .. mod)
-            source.visible = false
+        local index = sourceMap[mod]
+        
+        if not index then
+            local source = {
+                name = GetString("mods.available." .. mod .. ".listname"),
+                mod = mod,
+                category = "",
+                enabled = not GetBool("savegame.spawn.disabled." .. mod),
+                visible = false
+            }
             gSources[#gSources + 1] = source
             index = #gSources
+            sourceMap[mod] = index
         end
-        if gSources[index].visible == false and gSources[index].enabled then
+        
+        if not gSources[index].visible and gSources[index].enabled then
             if matchName(gSpawnList[i].name) or matchName(gSpawnList[i].type) or matchName(gSources[index].name) then
                 gSources[index].visible = true
             end
@@ -166,25 +181,25 @@ function refresh()
         end
     end
 
-    -- Types
+    -- Types - use hash map for O(1) lookup
     gTypes = {}
+    local typeMap = {}  -- type name -> index mapping
+    
     for i = 1, #gSpawnList do
         if isSourceValid(gSpawnList[i].mod) then
-            local name = gSpawnList[i].type
-            local index = 0
-            for j = 1, #gTypes do
-                if gTypes[j].name == name then
-                    index = j
-                    break
-                end
-            end
-            if index == 0 then
-                local typ = {}
-                typ.name = name
-                typ.visible = false
+            local typeName = gSpawnList[i].type
+            local index = typeMap[typeName]
+            
+            if not index then
+                local typ = {
+                    name = typeName,
+                    visible = false
+                }
                 gTypes[#gTypes + 1] = typ
                 index = #gTypes
+                typeMap[typeName] = index
             end
+            
             if not gTypes[index].visible then
                 if matchName(gSpawnList[i].name) or matchName(gTypes[index].name) then
                     gTypes[index].visible = true
@@ -266,6 +281,8 @@ function refresh()
     gSelectVisible = false
 end
 
+-- Calculate the rotation for spawning based on camera direction
+-- @return: Quaternion rotation for the spawned entity
 function getRotation()
     local fwd = TransformToParentVec(GetCameraTransform(), Vec(0, 0, -1))
     fwd[2] = 0
@@ -274,13 +291,16 @@ function getRotation()
     return QuatEuler(0, angle + spawnRot, 0)
 end
 
+-- Main tick function for spawner logic
+-- Handles placement mode, input, and UI refresh
+-- @param dt: Delta time since last tick
 function spawner_tick(dt)
     if spawnPlacement then
         SetBool("game.input.locktool", true)
         SetBool("game.disablepause", true)
         SetBool("game.disableinteract", true)
 
-        spawnDist = clamp(spawnDist + InputValue("mousewheel"), 2, 8 + spawnRadius)
+        spawnDist = clamp(spawnDist + InputValue("mousewheel"), MIN_SPAWN_DISTANCE, MAX_SPAWN_DISTANCE_OFFSET + spawnRadius)
 
         local t = GetCameraTransform()
         t.pos = VecAdd(t.pos, TransformToParentVec(t, Vec(0, 0, -spawnDist)))
@@ -291,7 +311,7 @@ function spawner_tick(dt)
             local e = spawnEntities[i]
             if spawnOffset[i] then
                 local wt = TransformToParentTransform(t, spawnOffset[i])
-                local q = 0.25
+                local q = PLACEMENT_LERP_FACTOR
                 if GetEntityType(e) == "body" then
                     local bt = GetBodyTransform(e)
                     local it = Transform(VecLerp(bt.pos, wt.pos, q), QuatSlerp(bt.rot, wt.rot, q))
@@ -347,7 +367,7 @@ function spawner_tick(dt)
         end
         if InputDown("grab") then
             SetBool("game.player.disableinput", true)
-            spawnRot = spawnRot + InputValue("camerax") * 50
+            spawnRot = spawnRot + InputValue("camerax") * ROTATION_SENSITIVITY
         end
         if InputPressed("pause") then
             spawnAbort()
@@ -373,17 +393,31 @@ function spawner_tick(dt)
     end
 end
 
+-- Abort the current spawn placement and delete preview entities
 function spawnAbort()
-    for i = 1, #spawnEntities do
-        Delete(spawnEntities[i])
+    if spawnEntities then
+        for i = 1, #spawnEntities do
+            Delete(spawnEntities[i])
+        end
     end
     spawnPlacement = false
 end
 
+-- Check if spawning is currently allowed
+-- @return: true if player can interact and spawn, false otherwise
 function spawnEnabled()
     return GetBool("game.player.interactive") -- and (GetBool("level.spawn") or GetBool("options.game.spawn"))
 end
 
+-- Draw a scrollable list UI element
+-- @param w: Width of the list
+-- @param h: Height of the list
+-- @param title: Title text to display above the list
+-- @param items: Array of items to display
+-- @param selected: Index of currently selected item
+-- @param state: State table for scroll position and dragging
+-- @param scrollToIndex: Optional index to scroll to
+-- @return: selected index, hover index
 function drawList(w, h, title, items, selected, state, scrollToIndex)
     local hover = 0
 
@@ -434,7 +468,7 @@ function drawList(w, h, title, items, selected, state, scrollToIndex)
     end
 
     state.scroll = clamp(state.scroll, 0, ma)
-    state.scrollSmooth = 0.8 * state.scrollSmooth + 0.2 * state.scroll
+    state.scrollSmooth = SCROLL_SMOOTHING_FACTOR * state.scrollSmooth + (1 - SCROLL_SMOOTHING_FACTOR) * state.scroll
     state.scrollSmooth = clamp(state.scrollSmooth, 0, ma)
     UiTranslate(0, -state.scrollSmooth * fh)
 
@@ -534,6 +568,9 @@ function drawList(w, h, title, items, selected, state, scrollToIndex)
 end
 
 function getSource(mod)
+    if not mod then
+        return nil
+    end
     for i = 1, #gSources do
         if gSources[i].mod == mod then
             return gSources[i]
@@ -563,6 +600,10 @@ CATEGORIES = {
 }
 
 function ShowMenu(vehicle_name)
+    if not vehicle_name or not Vehicles[vehicle_name] then
+        return ""
+    end
+    
     if UiTextButton(vehicle_name) then
         UiSound("click.ogg")
         return Vehicles[vehicle_name].path
@@ -602,9 +643,9 @@ function drawSpawnUi()
     end
 
     for categ in pairs(CATEGORIES) do
-        if categ == "Car" and cars_overflow > 20 then
+        if categ == "Car" and cars_overflow > CAR_OVERFLOW_THRESHOLD then
             UiPush()
-            local scroll_bar_width = (cars_overflow - 20 + 1) * 35 / 2
+            local scroll_bar_width = (cars_overflow - CAR_OVERFLOW_THRESHOLD + 1) * 35 / 2
             cars_scroll_value = clamp(cars_scroll_value - InputValue("mousewheel") * 20, 0, scroll_bar_width)
             UiTranslate(210, UiHeight() / 2 - 180)
             UiAlign("center middle")
@@ -635,7 +676,7 @@ function drawSpawnUi()
             UiColor(1, 1, 1)
             UiTranslate(300, 35)
         end
-        if categ == "Car" and cars_overflow > 20 then
+        if categ == "Car" and cars_overflow > CAR_OVERFLOW_THRESHOLD then
             UiTranslate(0, cars_scroll_value * 2)
         end
     end
@@ -643,14 +684,24 @@ function drawSpawnUi()
     return ""
 end
 
+-- Spawn a vehicle from a file and enter placement mode
+-- @param file: Path to the vehicle XML file to spawn
 function spawn(file)
+    if not file or file == "" then
+        return
+    end
+    
     UiSound("spawn/spawn.ogg")
     spawnRot = 0
     local t = GetCameraTransform()
-    t.pos = VecAdd(t.pos, TransformToParentVec(t, Vec(0, 0, -7)))
+    t.pos = VecAdd(t.pos, TransformToParentVec(t, Vec(0, 0, SPAWN_CAMERA_OFFSET)))
     t.rot = getRotation()
     local c = t
     spawnEntities = Spawn(file, t)
+    
+    if not spawnEntities or #spawnEntities == 0 then
+        return
+    end
     local mi = Vec(10000, 10000, 10000)
     local ma = Vec(-10000, -10000, -10000)
     for i = 1, #spawnEntities do

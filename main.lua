@@ -1,22 +1,33 @@
 #include "spawner.lua"
 
+-- Constants
+local DELETE_RAYCAST_DISTANCE = 10
+local DELETE_OUTLINE_COLOR = {1, 0, 0, 0.5}
+
 function DeleteObject()
-	if delete_shape ~= 0 then
-		DrawShapeOutline(delete_shape, 1, 0, 0, 0.5)
+	-- Highlight the shape that will be deleted
+	if gDeleteShape ~= 0 then
+		DrawShapeOutline(gDeleteShape, DELETE_OUTLINE_COLOR[1], DELETE_OUTLINE_COLOR[2], DELETE_OUTLINE_COLOR[3], DELETE_OUTLINE_COLOR[4])
 	end
 
+	-- Only allow deletion when not in a vehicle
 	if GetPlayerVehicle() == 0 and InputPressed("delete") then
-		local camera_tr = GetCameraTransform()
-		local camera_fwd = TransformToParentVec(camera_tr, Vec(0, 0, -1))
+		local cameraTransform = GetCameraTransform()
+		local cameraForward = TransformToParentVec(cameraTransform, Vec(0, 0, -1))
 		QueryRequire("physical dynamic large")
-		local hit, _, _, shape = QueryRaycast(camera_tr.pos, camera_fwd, 10)
-		if hit and delete_shape == 0 then
-			delete_shape = shape
+		local hit, _, _, shape = QueryRaycast(cameraTransform.pos, cameraForward, DELETE_RAYCAST_DISTANCE)
+		
+		-- First click: select the shape
+		if hit and gDeleteShape == 0 then
+			gDeleteShape = shape
 			return
 		end
-		if hit and delete_shape == shape then
+		
+		-- Second click on same shape: delete it
+		if hit and gDeleteShape == shape then
 			local body = GetShapeBody(shape)
 			local vehicle = GetBodyVehicle(body)
+			
 			if vehicle ~= 0 then
 				Delete(vehicle)
 			else
@@ -27,12 +38,13 @@ function DeleteObject()
 				end
 			end
 		end
-		delete_shape = 0
+		
+		gDeleteShape = 0
 	end
 end
 
 function init()
-	delete_shape = 0
+	gDeleteShape = 0
 	spawner_init()
 end
 
